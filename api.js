@@ -1,4 +1,4 @@
-const apiURL = "http://api.openweathermap.org/data/2.5/weather"
+const apiURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather"
 const api = "93d3fc2c78eb66d0e26103026ba3c019"
 
 const seattleLat = "47.6762"
@@ -27,7 +27,7 @@ function getWeather(url) {
     let response = (JSON.parse(request.response))
     console.log(response.wind.speed)
 
-    weatherDiv.innerHTML = ("Today's forecast shows " + response.weather[0].main + "." + " It will be " + (response.main.temp - 273.15).toFixed(1) + " degrees, with up to " + response.main.humidity + "% humidity." + " Your location is expecting winds up to " + response.wind.speed + "km/h.")
+    weatherDiv.innerHTML = ("Today's forecast shows " + response.weather[0].main + "." + " It will be " + (response.main.temp - 273.15).toFixed(1) + " degrees Celsius, with up to " + response.main.humidity + "% humidity." + " Your location is expecting winds up to " + response.wind.speed + "km/h.")
   }
 
   request.onerror = function (errorObj) {
